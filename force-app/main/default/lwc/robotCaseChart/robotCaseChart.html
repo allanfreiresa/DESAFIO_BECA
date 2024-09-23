@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Robô com Mais Chamados" icon-name="custom:custom14">
+        <canvas class="chart" lwc:dom="manual"></canvas>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>

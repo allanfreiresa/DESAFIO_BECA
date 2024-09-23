@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Ranking de Clientes com SLA Vencido" icon-name="standard:account">
+        <template if:true={clientsWithViolations}>
+            <lightning-datatable
+                key-field="caseNumber"
+                data={clientsWithViolations}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+        <template if:false={clientsWithViolations.length}>
+            <p>Não há clientes com SLA vencido.</p>
+        </template>
+    </lightning-card>
+</template>

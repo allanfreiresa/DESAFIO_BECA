@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-text-heading_small">KPIs de Monitoramento</h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Ajuste para duas linhas com dois KPIs em cada -->
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="kpi-box">
+                        <p>Total de Chamados Abertos</p>
+                        <p class="kpi-value kpi-font">{totalOpenCases}</p>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="kpi-box">
+                        <p>Chamados Atrasados</p>
+                        <p class="kpi-value kpi-font">{overdueCases}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class={criticalClass}>
+                        <p>Chamados Críticos Vencidos</p>
+                        <p class={criticalCasesClass} style={criticalStyle}>{criticalOverdueCases}</p>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="kpi-box">
+                        <p>Total de Chamados por Responsável</p>
+                        <p class="kpi-value kpi-font" style="white-space: pre-line;">{casesByOwner}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
